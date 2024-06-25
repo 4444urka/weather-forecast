@@ -6,6 +6,8 @@ const CurrentWeather = ({ weatherData }) => {
     switch (condition) {
       case "clear-day":
         return "https://cdn-icons-png.flaticon.com/512/606/606795.png";
+      case "clear-night":
+        return "https://cdn-icons-png.flaticon.com/512/1163/1163594.png"
       case "cloudy":
         return "https://cdn-icons-png.flaticon.com/512/2930/2930014.png";
       case "partly-cloudy-day":

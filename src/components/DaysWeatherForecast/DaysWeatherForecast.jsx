@@ -2,29 +2,75 @@ import React from "react";
 import "./styles.css";
 
 const DaysWeatherForecast = ({ weatherData }) => {
+  const getMonthByNumber = (number) => {
+    switch (number) {
+      case "01":
+        return "January";
+      case "02":
+        return "February";
+      case "03":
+        return "March";
+      case "04":
+        return "April";
+      case "05":
+        return "May";
+      case "06":
+        return "June";
+      case "07":
+        return "July";
+      case "08":
+        return "August";
+      case "09":
+        return "September";
+      case 10:
+        return "October";
+      case 11:
+        return "November";
+      case 12:
+        return "December";
+      default:
+        return "";
+    }
+  };
+
   const forecastData = [
     {
-      day: "Monday",
+      day:
+        weatherData.days[0].datetime.split("-")[2] +
+        " " +
+        getMonthByNumber(weatherData.days[0].datetime.split("-")[1]),
       temperature: weatherData.days[0].temp,
       condition: weatherData.days[0].icon,
     },
     {
-      day: "Tuesday",
+      day:
+      weatherData.days[1].datetime.split("-")[2] +
+      " " +
+      getMonthByNumber(weatherData.days[1].datetime.split("-")[1]),
       temperature: weatherData.days[1].temp,
       condition: weatherData.days[1].icon,
     },
     {
-      day: "Wednesday",
+      day:
+        weatherData.days[2].datetime.split("-")[2] +
+        " " +
+        getMonthByNumber(weatherData.days[2].datetime.split("-")[1]),
       temperature: weatherData.days[2].temp,
       condition: weatherData.days[2].icon,
     },
     {
-      day: "Thursday",
+      day:
+        weatherData.days[3].datetime.split("-")[2] +
+        " " +
+        getMonthByNumber(weatherData.days[3].datetime.split("-")[1]),
       temperature: weatherData.days[3].temp,
       condition: weatherData.days[3].icon,
     },
     {
-      day: "Friday",
+      day:
+        weatherData.days[4].datetime.split("-")[2] +
+        " " +
+        getMonthByNumber(weatherData.days[4].datetime.split("-")[1]),
       temperature: weatherData.days[4].temp,
       condition: weatherData.days[4].icon,
     },
@@ -54,8 +100,11 @@ const DaysWeatherForecast = ({ weatherData }) => {
         {forecastData.map((forecast, index) => (
           <div key={index} className="forecast-day">
             <h4>{forecast.day}</h4>
-            <p>{Math.round((forecast.temperature - 32)*(5/9))}°С</p>
-            <img  src={getWeatherIcon(forecast.condition)} alt={forecast.condition}/>
+            <p>{Math.round((forecast.temperature - 32) * (5 / 9))}°С</p>
+            <img
+              src={getWeatherIcon(forecast.condition)}
+              alt={forecast.condition}
+            />
           </div>
         ))}
       </div>

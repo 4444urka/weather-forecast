@@ -1,18 +1,21 @@
 .Header {
-    background-color: black;
-    color: white;
-    display: flex;
-    align-items: center;
-    padding: 0 20vw; /* Исправлено на px для корректного отображения */
-    height: 70px;
-    font-size: 1.4em;
-    margin-bottom: 0.8em;
+  background-color: black;
+  color: white;
+  display: flex;
+  top: 0;
+  width: 100%;
+  align-items: center;
+  padding: 0 20vw; /* Исправлено на px для корректного отображения */
+  height: 70px;
+  font-size: 1.4em;
+  position: fixed;
+  z-index: 1000;
 }
 
 /* Медиа-запрос для экранов меньше 600px */
 @media (max-width: 600px) {
-    .Header {
-        justify-content: flex-start; /* Выравнивание содержимого по левому краю */
-        padding: 0 30px; /* Уменьшенный отступ для маленьких экранов */
-    }
+  .Header {
+    justify-content: flex-start; /* Выравнивание содержимого по левому краю */
+    padding: 0 30px; /* Уменьшенный отступ для маленьких экранов */
+  }
 }

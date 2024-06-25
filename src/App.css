@@ -4,6 +4,19 @@
   flex-wrap: wrap;
   justify-content: space-between;
   font-size: 0.9em;
+  margin-top: 75px;
+}
+
+.achor {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  :active {
+    color: inherit; /* Наследуем цвет текста от родительского элемента */
+    background-color: transparent; /* Убираем фон */
+    outline: none; /* Убираем обводку */
+    text-decoration: none; /* Убираем подчеркивание */
+  }
 }
 
 @media (max-width: 600px) {
