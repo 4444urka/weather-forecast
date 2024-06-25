@@ -1,0 +1,24 @@
+.Box {
+    display: flex;
+    flex: 1 1 35%;
+    background-color: white;
+    padding: 1em;
+    width: 30vw;
+    min-width: 250px;
+    margin: 0.8em 0.4em 0 0.4em;
+    min-height: 20px;
+    border-radius: 10px;
+    flex-direction: column;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.062);
+}
+
+.Box p {
+    margin: 10px 0; /* Добавляет отступ между параграфами */
+  }
+
+  @media (max-width: 600px) {
+    .Box {
+      flex: 1 1 100%;
+      width: 85vw;
+    }
+  }

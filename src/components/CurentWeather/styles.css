@@ -1,0 +1,23 @@
+.weather-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 15px;
+    width: 100%;
+  }
+  
+  .weather-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .weather-icon img {
+    width: 100px;
+    height: 100px;
+  }
+
+  @media (max-width: 600px) {
+    .weather-container {
+      padding-top: 0;
+    }
+  }
