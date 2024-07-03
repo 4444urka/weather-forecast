@@ -13,7 +13,7 @@
 }
 
 /* Медиа-запрос для экранов меньше 600px */
-@media (max-width: 600px) {
+@media (max-width: 1250px) {
   .Header {
     justify-content: flex-start; /* Выравнивание содержимого по левому краю */
     padding: 0 30px; /* Уменьшенный отступ для маленьких экранов */

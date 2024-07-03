@@ -1,30 +1,31 @@
 .AppContent {
   padding: 0 20vw;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   font-size: 0.9em;
   margin-top: 75px;
 }
 
+.boxes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .achor {
+  transition: all 0.3s ease-in-out;
   text-decoration: none;
   font-weight: bold;
   color: white;
-  :active {
-    color: inherit; /* Наследуем цвет текста от родительского элемента */
-    background-color: transparent; /* Убираем фон */
-    outline: none; /* Убираем обводку */
-    text-decoration: none; /* Убираем подчеркивание */
+
+  &:active {
+    opacity: 30%;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1250px) {
   .AppContent {
-    display: flex;
     padding: 0 0;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
   }
 }

@@ -1,7 +1,7 @@
 export async function getWeatherDataByRegion(city, country) {
     try {
       const response = await fetch(
-        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}%2C${country}?unitGroup=us&key=STGEFRRCZ458YXSLWUUGVF6V9`
+        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}%2C${country}?unitGroup=metric&key=STGEFRRCZ458YXSLWUUGVF6V9`
       );
   
       if (!response.ok) {

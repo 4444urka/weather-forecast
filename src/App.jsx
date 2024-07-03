@@ -4,7 +4,7 @@ import Box from "./components/Box/Box";
 import Header from "./components/Header/Header";
 import { getUserRegion, getWeatherDataByRegion } from "./api/api";
 import CurrentWeather from "./components/CurentWeather/CurentWeather";
-import DaysWeatherForecast from "./components/DaysWeatherForecast/DaysWeatherForecast";
+import WeatherForecast from "./components/DaysWeatherForecast/WeatherForecast";
 import Spinner from "./components/Spinner/Spinner";
 function App() {
   const [userRegion, setUserRegion] = useState(null);
@@ -30,22 +30,49 @@ function App() {
   return (
     <div className="App">
       <Header>
-
-        <a href="#top" className="achor">Weather Forecast</a>
+        <a href="#top" className="achor">
+          Weather Forecast
+        </a>
       </Header>
       <div className="AppContent">
         {userRegion && weatherData ? (
           <>
-            <CurrentWeather id="top" weatherData={weatherData} />
-            <Box>
-              <DaysWeatherForecast weatherData={weatherData} />
-            </Box>
-            <Box alignItems="center" marginBottom="10px">
+            <div className="boxes-container">
+              <CurrentWeather id="top" weatherData={weatherData} />
+              <Box>
+                <WeatherForecast
+                  weatherData={weatherData.days.slice(0, 10)}
+                  displayType="date"
+                >
+                  Week forecast
+                </WeatherForecast>
+              </Box>
+              <Box>
+                <WeatherForecast
+                  weatherData={weatherData.days[0].hours.slice(0, 10)}
+                  displayType="time"
+                >
+                  Hour forecast
+                </WeatherForecast>
+              </Box>
+            </div>
+            <Box
+              alignItems="center"
+              marginBottom="10px"
+              className="description-box"
+            >
               <h3>{weatherData.description}</h3>
             </Box>
           </>
         ) : (
-          <div style={{ display: "flex", justifyContent: "center", width: "100%", marginTop: "10px" }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              width: "100%",
+              marginTop: "10px",
+            }}
+          >
             <Spinner />
           </div>
         )}

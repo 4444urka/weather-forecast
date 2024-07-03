@@ -28,9 +28,9 @@ const CurrentWeather = ({ weatherData }) => {
       <div className="weather-container">
         <div className="weather-info">
           <h3>{weatherData.address.split(",")[0]}</h3>
-          <h2>{Math.round((weatherData.currentConditions.temp - 32)*(5/9))}°С</h2>
+          <h2>{weatherData.currentConditions.temp}°С</h2>
           <p>
-            <b>Feels like:</b> {Math.round((weatherData.currentConditions.feelslike - 32)*(5/9))}°С
+            <b>Feels like:</b> {weatherData.currentConditions.feelslike}°С
           </p>
         </div>
         <div className="weather-icon">
